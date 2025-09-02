@@ -1,0 +1,16 @@
+// MAIN_KRNL
+
+char *VIDEO_MEMORY = (char* )0xB8000;
+
+void kernel_main() {
+    const char *msg = "C21 booted";
+    int i = 0;
+    while (msg[i] != 0) {
+        VIDEO_MEMORY[i*2] = msg[i];
+        VIDEO_MEMORY[i*2+1] = 0x07;
+
+        i++;
+    }
+
+    for(;;);
+}
