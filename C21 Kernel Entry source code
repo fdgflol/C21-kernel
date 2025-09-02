@@ -1,0 +1,9 @@
+bits 32
+
+
+extern krnl ; Already Defined in C
+global start
+
+start:
+   call krnl ; Call C function 
+hlt
